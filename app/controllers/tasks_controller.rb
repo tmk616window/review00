@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all.order(id: :desc)
-
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true)
   end
+  
+
     
   def new
     @task = Task.new
