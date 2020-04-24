@@ -2,17 +2,18 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-if Rails.env.production?
   CarrierWave.configure do |config|
-    config.fog_provider = 'fog/aws'
-    config.fog_credentials = {
-      provider: 'AWS',
-      aws_access_key_id: 'AKIA57SARZ7UGJGYT34L',
-      aws_secret_access_key: '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',
-      region: 'ap-northeast-1'  
-    }
-    config.fog_directory  = 'tmk616window' 
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: ENV['S3_ACCESS_KEY'],
+    aws_secret_access_key: ENV['S3_SECRET_KEY'],
+    region: 'ap-northeast-1',
+    path_style: true
+  }
+
+    config.fog_directory  = 'rails-photo-123'
+    config.cache_storage = :fog
   end
-  # 日本語ファイル名の設定
-  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/ 
-end
+  
+  
+  

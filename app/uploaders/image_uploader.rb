@@ -8,11 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   # developmentとtest以外はS3を使用
-  if Rails.env.production?
     storage :fog
-  else
-    storage :file
-  end
   # 画像ごとに保存するディレクトリを変える
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
