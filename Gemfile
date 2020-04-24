@@ -53,8 +53,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'fog-aws'
-  
 end
 
 
@@ -63,4 +61,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap'
 gem 'devise'
 gem 'carrierwave'
-
+gem 'fog-aws'
