@@ -5,8 +5,8 @@ require 'carrierwave/storage/fog'
   CarrierWave.configure do |config|
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: ENV['S3_ACCESS_KEY'],
-    aws_secret_access_key: ENV['S3_SECRET_KEY'],
+    aws_access_key_id: 'AKIA57SARZ7UGJGYT34L',
+    aws_secret_access_key: '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',
     region: 'ap-northeast-1',
     path_style: true
   }
