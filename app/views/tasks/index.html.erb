@@ -1,6 +1,14 @@
 <%= search_form_for @q do |f| %>
-    <%= f.search_field :company_info_cont%>
-    <%= f.submit %>
+<div class='container'>
+    開発言語
+    <%=f.text_field :task_pl_cont%>
+    採用状況
+    <%= f.select :recruit_cont, [['', ''],['新卒', '新卒'], ['中途', '中途'], ['インターン', 'インターン']] %>
+    企業形態
+    <%= f.select :company_info_cont, [['', ''],['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
+    <%= f.submit '検索'%>
+    
+</div>
 <% end %>
 
 <div class="task_index">
