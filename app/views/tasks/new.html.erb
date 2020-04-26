@@ -1,6 +1,6 @@
 <h1>ポートフォリオ分析(5点満点)</h1>
 <%=form_with model: @task do |f|%>
-<%= f.hidden_field :task_id, value: current_user.id%>
+<%= f.hidden_field :user_id, value: current_user.id%>
 <%= f.hidden_field :task_user_email, value: current_user.email %>
 <br><br><br>
 デザイン

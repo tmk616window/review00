@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_200756) do
+ActiveRecord::Schema.define(version: 2020_04_26_202147) do
 
   create_table "follows", force: :cascade do |t|
     t.integer "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_200756) do
     t.integer "task_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_likes_on_task_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -53,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_04_22_200756) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "task_id"
     t.string "task_user_email"
     t.text "design"
     t.integer "design_point"
@@ -77,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_200756) do
     t.text "task_coment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -96,4 +99,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_200756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "tasks"
+  add_foreign_key "likes", "users"
+  add_foreign_key "tasks", "users"
 end

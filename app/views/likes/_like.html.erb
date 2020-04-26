@@ -1,0 +1,19 @@
+        <div class='show_tasks_like_count'>
+        <p>いいね数：<%=@likes.count%></p>
+        </div>    
+        <div class='show_tasks_like_button'>
+        <%if !!@like_user.nil?%>
+        <div class='like_button_create'>
+            <%=form_with model: @like do |f|%>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :task_id, value: @task.id %>
+            <%=f.submit 'いいね',class:'btn btn-primary'%>
+            <%end%>
+        </div>        
+        <%else%>
+        <div class='like_button_destroy'>
+            <%=link_to 'いいね消去' , "/likes/#{@like_user.id}", method: :delete, class:'btn btn-primary'%>
+        </div>
+        <%end%>
+            
+        </div>
