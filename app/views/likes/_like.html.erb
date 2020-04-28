@@ -1,16 +1,17 @@
         <div class='show_tasks_like_count'>
-        <p>いいね数：<%=@likes.count%></p>
         </div>    
         <div class='show_tasks_like_button'>
         <%if !!@like_user.nil?%>
-        <div class='like_button_create'>
+        <div id='like_button_create_<%=@task.id%>'>
+            <p>いいね数：<%=@likes.count%></p>
             <%=link_to 'いいね' , likes_path(like: {user_id: current_user.id, task_id: @task.id}) , method: :post,action:'create', class:'btn btn-primary',
-            authenticity_token: form_authenticity_token,data: { disable_with: '送信中' }%>
+            authenticity_token: form_authenticity_token,data: { disable_with: '送信中' },remote: true%>
         </div>        
         <%else%>
-        <div class='like_button_destroy'>
-            <%=link_to 'いいね消去' , "/likes/#{@like_user.id}", method: :delete, class:'btn btn-primary',
-                data: { disable_with: '送信中' }%>
+        <div id='like_button_destroy_<%=@task.id%>'>
+            <p>いいね数：<%=@likes.count%></p>
+            <%=link_to 'いいね済' , "/likes/#{@like_user.id}", method: :delete, class:'btn btn-primary',
+                data: { disable_with: '送信中' },remote: true%>
         </div>
         <%end%>
             

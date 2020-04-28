@@ -1,1 +1,2 @@
 
+$('#like_button_create_<%=@task.id%>').html("<%= j(render partial: 'likes/like', locals: {task: @task}) %>");

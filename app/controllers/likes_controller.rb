@@ -2,15 +2,19 @@ class LikesController < ApplicationController
     def create
     @like = Like.new(like_params)
     @like.save
-    redirect_to task_path(@like.task_id)
-    
+    @task = Task.find_by(id: @like.task_id)
+    @likes = Like.where(task_id: @like.task_id)
+    @new_likes = Like.where(task_id: @task.id)
+    @like_user = @new_likes.find_by(user_id: current_user.id)
+
     end
     
     def destroy
         @like = Like.find(params[:id])
-        @task= Task.find_by(id: @like.user_id)
+        @task = Task.find_by(id: @like.task_id)
         @like.destroy
-        redirect_to task_path(@task)
+        @likes = Like.where(task_id: @like.task_id)
+        
     end
     
     private
