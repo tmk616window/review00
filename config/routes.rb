@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   get 'index/new'
   get 'index/edit'
   get '/explain/:id' , to:'posts#explain'
-  
+  post '/tasks/:id', to:'tasks#like'
   devise_for :users
   root to: 'tasks#index'
   resources :'tasks'
-  resources :'likes'
+  resources :'likes' , only: [ :create , :destroy ] 
   resources :'follows'
   resources :'users'
   resources :'posts'
