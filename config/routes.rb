@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/tasks/:id', to:'tasks#like'
   devise_for :users
   root to: 'tasks#index'
+  resources :'chats'
   resources :'tasks'
   resources :'likes' , only: [ :create , :destroy ] 
   resources :'follows'

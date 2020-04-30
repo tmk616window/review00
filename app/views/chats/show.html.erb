@@ -1,0 +1,21 @@
+<div class='container'>
+
+<%@chats.each do |m|%>
+<p><%=m.content%></p>
+
+<%end%>
+
+
+
+
+
+<div id="new_message"%></div>
+
+
+<%=form_with model: @chat do |f|%>
+<%=f.text_area :content,id:'chat_message'%>
+<%=f.submit%>
+<%end%>
+
+</div>
+
