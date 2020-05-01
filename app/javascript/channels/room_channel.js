@@ -10,12 +10,12 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    var node = document.createElement("P"); 
+  var node = document.createElement("p"); 
+
     var textnode = document.createTextNode(data.content.content); 
     node.appendChild(textnode); 
     document.getElementById("new_message").appendChild(node);
-    document.getElementById('chat_message').value= ''
-    
+    document.getElementById('chat_message1').value= ''
     // Called when there's incoming data on the websocket for this channel
   }
 });

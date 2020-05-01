@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_140833) do
+ActiveRecord::Schema.define(version: 2020_04_30_143839) do
 
   create_table "chats", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_04_30_140833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chats", "users"
   add_foreign_key "likes", "tasks"
   add_foreign_key "likes", "users"
   add_foreign_key "tasks", "users"

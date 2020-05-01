@@ -1,21 +1,30 @@
-<div class='container'>
+<div class=' chat'>
+<div class=''>
+<div class="chat1" >
+
 
 <%@chats.each do |m|%>
+<br>
+<h6>box</h6>
 <p><%=m.content%></p>
-
 <%end%>
-
-
-
-
-
 <div id="new_message"%></div>
 
-
+<div class=''>
 <%=form_with model: @chat do |f|%>
-<%=f.text_area :content,id:'chat_message'%>
-<%=f.submit%>
+<%= f.hidden_field :user_id, value: current_user.id%>
+<div class="input-group mb-6 chat_form ">
+<%=f.text_field :content,class:'form-control',id:'chat_message1'%>
+  <div class="input-group-append">
+<%=f.submit '投稿',class:'btn btn-outline-secondary show_btn',id:"button-addon2"%>
+  </div>
+</div>
 <%end%>
+</div>
 
+
+
+</div>
+</div>
 </div>
 
