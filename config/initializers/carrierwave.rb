@@ -4,7 +4,7 @@ require 'carrierwave/storage/fog'
 
 
 CarrierWave.configure do |config|
-  if Rails.env.production? || Rails.env.development? # 開発中もs3使う
+  if Rails.env.production? # 開発中もs3使う
     config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'tmk616window'

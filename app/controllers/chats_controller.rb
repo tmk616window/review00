@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
     @chats = Chat.all
     @chat = Chat.new
     @user = User.find_by(id: current_user.id)
-    gon.user_name = @user.email
+    gon.user_icon = @user.icon.url
     
     
   end
