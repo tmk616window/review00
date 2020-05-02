@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_143839) do
+ActiveRecord::Schema.define(version: 2020_05_02_045904) do
 
   create_table "chats", force: :cascade do |t|
     t.text "content"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_04_30_143839) do
     t.string "programing_language"
     t.string "job_past"
     t.string "name"
+    t.string "icon"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

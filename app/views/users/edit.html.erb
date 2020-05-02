@@ -1,6 +1,8 @@
 <h1>プロフィール</h1>
 
 <%=form_with model: @user do |f|%>
+<p>アイコン</p>
+<%= f.file_field :icon %>
 <p>名前</p>
 <%=f.text_field:name%>
 <p>年齢</p>

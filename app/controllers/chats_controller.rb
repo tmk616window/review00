@@ -3,6 +3,10 @@ class ChatsController < ApplicationController
     @users = User.all
     @chats = Chat.all
     @chat = Chat.new
+    @user = User.find_by(id: current_user.id)
+    gon.user_name = @user.email
+    
+    
   end
   
   def create

@@ -4,9 +4,13 @@
 
 
 <%@chats.each do |m|%>
+
 <br>
-<h6>box</h6>
+
+<h6><%= image_tag @user.icon.url%></h6>
 <p><%=m.content%></p>
+
+
 <%end%>
 <div id="new_message"%></div>
 

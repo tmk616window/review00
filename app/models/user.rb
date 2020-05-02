@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     has_many :tasks, foreign_key: 'user_id', dependent: :destroy
     has_many :likes, foreign_key: 'user_id', dependent: :destroy
+    mount_uploader :icon, ImageUploader
+    
 end
