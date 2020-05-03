@@ -173,7 +173,10 @@ header{
     max-width:70%;
     margin:0 auto;
     background-color:#DDDDDD;
+    
 } 
+
+
 
 .chat p{
     
@@ -193,13 +196,18 @@ header{
 }
 
 .chat1 h6{
+    text-align:center;
+    font-size:11px;
     margin-left:10px;
     float:left;
-    width:35px;
-    height:35px;
+    width:40px;
+    height:40px;
     border:solid red 1px;
 }
 
 .show_chat_user_name{
     font-size:10ps;
+}
+
+.chat_form{
 }

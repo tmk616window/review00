@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'channels/show'
+  get 'rooms/show'
   get 'index/show'
   get 'index/new'
   get 'index/edit'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   resources :'follows'
   resources :'users'
   resources :'posts'
+  resources :'channels'
   resources :'messages'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

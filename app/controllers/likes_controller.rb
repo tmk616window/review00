@@ -6,7 +6,6 @@ class LikesController < ApplicationController
     @likes = Like.where(task_id: @like.task_id)
     @new_likes = Like.where(task_id: @task.id)
     @like_user = @new_likes.find_by(user_id: current_user.id)
-
     end
     
     def destroy

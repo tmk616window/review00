@@ -104,6 +104,10 @@
     </tbody>
 </table>
 </div>            
+<br>
+<%=link_to '相談する' , channels_path(channel: {user_id: current_user.id, task_id: @task.user_id}) , method: :post,action:'create', class:'btn btn-primary',
+authenticity_token: form_authenticity_token,data: { disable_with: '相談する' }%>
+
                 
         </div>
     </div>

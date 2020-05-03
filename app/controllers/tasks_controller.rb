@@ -12,6 +12,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @user = User.all
     @like = Like.new
+    @channels= Channel.new
     @likes = Like.where(task_id: params[:id])
     @like_user = @likes.find_by(user_id: current_user.id)
   end

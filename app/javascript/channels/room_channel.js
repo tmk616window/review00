@@ -10,8 +10,7 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    document.write('<img src="gon.user_icon">')
-    
+
     
     var node1 = document.createElement("h6"); 
     var node2 = document.createElement("br"); 

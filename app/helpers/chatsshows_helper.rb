@@ -1,0 +1,2 @@
+module ChatsshowsHelper
+end
