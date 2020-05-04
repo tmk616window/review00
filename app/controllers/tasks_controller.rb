@@ -19,13 +19,22 @@ class TasksController < ApplicationController
   
   def destroy
     @task = Task.find(params[:id])
+    if  current_user.id != @task.user_id
+      redirect_to root_url
+    end
+    
     @task.destroy
     
     redirect_to '/tasks'
   end
   
   def edit
-    @task = Task.find(params[:task_id])
+    @task = Task.find(params[:id])
+
+    if  current_user.id != @task.user_id
+      redirect_to root_url
+    end
+    
   end
   
   def update

@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
   
   def show
+    
     @posts = Post.where(post_id: current_user.id)
     @user = User.find(params[:id])
-    if  current_user.id != @user.id
-      redirect_to root_url
-    end
+    @chats = Chat.where(chat_post_id: current_user.id)
     @follow = Follow.new
     @follows = Follow.where(user_id: params[:id])
     @follow_user = @follows.find_by(follower_id: current_user.id)
     @follow_current_user = Follow.where(follower_id: @user.id)
+    
   end
   
   def create
@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    if  current_user.id != @user.id
+      redirect_to root_url
+    end
   end
   def update
     @user = User.find(params[:id])

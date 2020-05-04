@@ -1,32 +1,54 @@
 <div class='container'>
 <h1>イベント一覧</h1>
 </div>
-
-<div class="task_index">
+<div class='container'>
+    <div class="d-flex align-content-stretch flex-wrap ">
         <%@messages.each do |m|%>
-<div class="container d-flex justify-content-center">
-    <div class='tasks_index '>
-        <a href="/messages/<%=m.id%>"></a>
-    <div class="tasks_index_image">
+<div class='message_index_box'>
+    <a href="/messages/<%=m.id%>"></a>
+    <div class="messages_index_image">
         <% if m.image? %>
-            <%= image_tag m.image.url, width:'100%',height:'100%'%>
+            <p><%= image_tag m.image.url, width:'100%',height:'100%'%></p>
           <% else %>
             <p>画像が挿入されていません</p>
         <% end %>
-    
-
-        
-        </div> 
-        <div class="tasks_index_form">
+    </div> 
+        <div class="messages_index_form">
         <p>イベント名　　　<%=m.name%></p>
         <p>内容　　　　　　<%=m.message_coment%></p>
         <p>場所　　　　　　<%=m.message_place%></p>
         <p>開催日時　　　　<%=m.date%></p>
         </div>
-    </div>
 </div>
-
 <%end%>
 
-    
+    </div>
+        
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

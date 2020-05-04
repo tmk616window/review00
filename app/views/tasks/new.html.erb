@@ -1,8 +1,12 @@
+<div class='container'>
+
 <h1>ポートフォリオ分析(5点満点)</h1>
 <%=form_with model: @task do |f|%>
 <%= f.hidden_field :user_id, value: current_user.id%>
 <%= f.hidden_field :task_user_email, value: current_user.email %>
+
 <br><br><br>
+
 デザイン
 <%= f.select :design_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
 機能
@@ -16,7 +20,7 @@
 <br><br>
 <h2>ポートフォリオ項目別説明</h2>
 <h3>コメント</h3>
-<%=f.text_area :task_coment%>
+<%=f.text_area :task_coment,class:'form-control'%>
 
 <p>企業情報</p>
 <p>採用方式</p>
@@ -24,19 +28,18 @@
 <p>企業情報</p>
 <%= f.select :company_info, [['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
 <p>分野</p>
-<%=f.text_field :field%>
-<p>年齢</p>
-<%=f.number_field :task_old%>
+<%=f.text_field :field,class:'form-control'%>
 <p>開発言語</p>
-<%=f.text_field :task_pl%>
+<%=f.text_field :task_pl,class:'form-control'%>
 <p>開発ツール</p>
-<%=f.text_field :task_tool%>
-<p>github_url</p>
-<%=f.text_field :github_url%>
-<p>作品概要</p>
-<%=f.text_field :work_explain%>
+<%=f.text_field :task_tool,class:'form-control'%>
+<p>作品URL</p>
+<%=f.text_field :github_url,class:'form-control'%>
 <p>勉強時間</p>
 <%=f.number_field :study_period%>ヶ月
-<br><br><br>
-<%=f.submit%>
+<br><br>
+<%=f.submit '投稿',class:'btn btn-primary'%>
 <%end%>
+
+    
+</div>

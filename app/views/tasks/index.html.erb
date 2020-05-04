@@ -1,5 +1,6 @@
+<div class='container tasks_index_seach'>
+
 <%= search_form_for @q do |f| %>
-<div class='container'>
     開発言語
     <%=f.text_field :task_pl_cont%>
     採用状況
@@ -8,10 +9,13 @@
     <%= f.select :company_info_cont, [['', ''],['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
     <%= f.submit '検索'%>
     
-</div>
 <% end %>
+</div>
+
 
 <div class="task_index">
+    
+    
         <%@tasks.each do |t|%>
 　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <div class="container d-flex justify-content-center">
@@ -56,6 +60,8 @@
         <p>開発言語　　　<%=t.task_pl%></p>
         </div>
     </div>
+    
+    
 </div>
 
 <%end%>

@@ -1,2 +1,46 @@
-<h1>Channels#show</h1>
-<p>Find me in app/views/channels/show.html.erb</p>
+<%@chats.each do |c|%>
+<%end%>
+<br>
+
+
+
+<div class=' chat'>
+<div class="chat1" >
+
+<%@chats.each do |m|%>
+
+<br>
+<div>
+<h6></h6>
+<p><%=m.content%></p>
+<%end%>
+</div>
+
+
+
+
+<div id="new_message"%></div>
+<br>
+<%=form_with model: @chat do |f|%>
+<%if current_user.id == @channel.task_id%>
+<%= f.hidden_field :chat_post_id, value: @channel.user_id%>
+<%elsif current_user.id == @channel.user_id%>
+<%= f.hidden_field :chat_post_id, value: @channel.task_id%>
+<%end%>
+<%= f.hidden_field :channel_id, value: @channel.id%>
+<%= f.hidden_field :task_id, value: @channel.task_id%>
+<%= f.hidden_field :user_id, value: current_user.id%>
+<div class="input-group mb-6 chat_form ">
+<%=f.text_field :content,class:'form-control',id:'chat_message1'%>
+<div class="input-group-append">
+<%=link_to 'ルーム消去' , "/channels/#{@channel.id}", method: :delete, class:'btn btn-danger',data: { confirm: 'トークルームを消去しますか？' },remote: true%>
+<%=f.submit '投稿',class:'btn btn-outline-secondary show_btn',id:"button-addon2"%>
+  </div>
+</div>
+<%end%>
+
+
+
+</div>
+</div>
+

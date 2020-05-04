@@ -1,2 +1,0 @@
-class Chatshow < ApplicationRecord
-end

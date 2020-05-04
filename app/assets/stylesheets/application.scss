@@ -56,9 +56,6 @@ header{
 }
 
 .tasks_index_seach{
-    border:solid 1px black;
-    width:200px;
-    height:400px;
 }
 
 .task_index{
@@ -210,4 +207,51 @@ header{
 }
 
 .chat_form{
+}
+
+.show_user_image p{
+    text-align:center;
+    height:250px;
+    width:250px;
+    border:solid black 1px;
+}
+
+.message_index_box{
+    height:400px;
+    width:360px;
+    margin-bottom:20px;
+    margin-right:10px;
+    border:solid black 1px;
+}
+
+.message_index_box{
+    position: relative;
+}
+
+.message_index_box a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+
+
+.messages_index_image{
+    height:200px;
+    width:300px;
+    margin-top:10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.messages_index_form{
+    margin-top:10px;
+    padding-left:10px;
+}
+
+.messages_new_form p{
+    margin:0;
 }
