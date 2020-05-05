@@ -1,0 +1,2 @@
+class GmapsController < ApplicationController
+end

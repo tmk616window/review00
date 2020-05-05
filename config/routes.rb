@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get 'index/edit'
   get '/explain/:id' , to:'posts#explain'
   post '/tasks/:id', to:'tasks#like'
+
+  get 'maps/index'
+  resources :maps, only: [:index]
+
+  
   devise_for :users
   root to: 'tasks#index'
   resources :'chats'

@@ -1,11 +1,11 @@
 <div class='container'>
 
-<h1>ポートフォリオ分析(5点満点)</h1>
+<h2>ポートフォリオ分析(5点満点)</h2>
 <%=form_with model: @task do |f|%>
 <%= f.hidden_field :user_id, value: current_user.id%>
 <%= f.hidden_field :task_user_email, value: current_user.email %>
 
-<br><br><br>
+<br>
 
 デザイン
 <%= f.select :design_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
@@ -19,10 +19,9 @@
 <%= f.select :user_perspective_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
 <br><br>
 <h2>ポートフォリオ項目別説明</h2>
-<h3>コメント</h3>
+<p>コメント</p>
 <%=f.text_area :task_coment,class:'form-control'%>
 
-<p>企業情報</p>
 <p>採用方式</p>
 <%= f.select :recruit, [['新卒', '新卒'], ['中途', '中途'], ['インターン', 'インターン']] %>
 <p>企業情報</p>
