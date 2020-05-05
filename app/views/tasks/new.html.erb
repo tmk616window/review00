@@ -1,11 +1,10 @@
-<div class='container'>
+<div class='container tasks_new'>
 
 <h2>ポートフォリオ分析(5点満点)</h2>
 <%=form_with model: @task do |f|%>
 <%= f.hidden_field :user_id, value: current_user.id%>
 <%= f.hidden_field :task_user_email, value: current_user.email %>
 
-<br>
 
 デザイン
 <%= f.select :design_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
