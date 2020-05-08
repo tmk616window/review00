@@ -1,12 +1,16 @@
 class ChannelsController < ApplicationController
     
     def show
-    @channel = Channel.find(params[:id])
-    @users = User.all
-    @chatss = Chat.where(channel_id: @channel.id)
-    @chats = @chatss.where(user_id: @channel.task_id).or(@chatss.where(user_id: @channel.user_id))  
-    @chat = Chat.new
-    @chat_user = @chatss.find_by(user_id: params[:user_id])
+        @channel = Channel.find(params[:id])
+        if  current_user.id == @channel.task_id || current_user.id == @channel.user_id
+        else
+            redirect_to root_url
+        end    
+        @users = User.all
+        @chatss = Chat.where(channel_id: @channel.id)
+        @chats = @chatss.where(user_id: @channel.task_id).or(@chatss.where(user_id: @channel.user_id))  
+        @chat = Chat.new
+        @chat_user = @chatss.find_by(user_id: params[:user_id])
     end
     
     def create

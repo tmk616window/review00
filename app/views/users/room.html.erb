@@ -1,0 +1,28 @@
+
+
+<div class='rooms container'>
+<div class='row justify-content-center'>
+
+<div class='room_messages'>
+<p>メッセージ一覧</p>    
+<%@chats.each do |c|%>
+<div class='room_message'>
+ユーザー<%=link_to "#{User.find_by(id: c.user_id).email}" , user_path(c.user_id) ,class:'message'%>    
+<p><%=link_to c.content , channel_path(c.channel_id) ,class:'message'%></p>
+<h8><%=c.created_at%></h8>
+</div>
+<%end%>
+</div>
+
+<div class='room_chat'>
+<p>ルーム一覧</p>
+<%@channel_room.each do |cr|%>
+
+<%=link_to "ユーザー：#{User.find_by(id: cr.user_id).email}、#{User.find_by(id: cr.task_id).email}" , channel_path(cr.id) ,class:'btn btn-primary'%><br><br>
+<%end%>
+</div>
+
+    
+</div>
+</div>
+

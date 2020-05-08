@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'index/edit'
   get '/explain/:id' , to:'posts#explain'
   post '/tasks/:id', to:'tasks#like'
-
+  get '/room/:id/' , to:'users#room', as: 'room'
   get 'maps/index'
   resources :maps, only: [:index]
 

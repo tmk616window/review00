@@ -1,15 +1,38 @@
-<h1>プロフィール</h1> 
-<% if current_user.id == @user.id%>
+<h1>プロフィール　<%=link_to '編集' , edit_user_path(@user) ,class:'btn btn-primary '%></h1> 
+
 <%= link_to "イベントメッセージ(#{@posts.count})", posts_path %>
-<%= link_to "チャットメッセージ(#{@chats.count})", '#' %>
-<%=link_to '編集' , edit_user_path(@user) ,class:'btn btn-primary'%>
+<%= link_to "チャットメッセージ(#{@chats.count})", room_path(@user) %>
+
+<div class='container'>
+
+<div class='users_follow'>
+<h4>フォローユーザー</h4> 
+<%@follow_current_user.each do |f|%>
+<p><%=link_to "#{User.find_by(id: f.user_id).email}" , user_path(f.user_id),class:'btn btn-primary form-control'%></p>
+<%end%>
+</div>
+    
+
+<div class='users_profile'>
+
+<% if current_user.id == @user.id%>
 <%else%>
 <p></p>
 <%end%>
 <div class='show_detail_profile'>
 <div class='show_user_image'>
+<%if @user.icon?%>    
 <p><%=image_tag @user.icon.url, width:'100%',height:'100%'%></p>
+<%else%>
+<p>画像が挿入されていません</p>
+<%end%>
 </div>
+
+<div class='shwow_detail_follow'>
+        <%= render partial: 'follows/follow', locals: { user: @user} %>
+</div>       
+
+
 <h2>自己紹介</h2>
 <P>名前　<%=@user.name%></P>
 <P>年齢　<%=@user.old%>歳</P>  
@@ -17,31 +40,12 @@
 <P>開発言語　<%=@user.job_past%></P>
 <h2>コメント　<%=@user.coment%></h2> 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class='shwow_detail_follow'>
-        <% if current_user.id != @user.id%>
-        <%if !!@follow_user.nil?%>
-            <%=form_with model: @follow do |f|%>
-            <%= f.hidden_field :follow_user_email, value: @user.email %>
-            <%= f.hidden_field :user_id, value: @user.id %>
-            <%= f.hidden_field :follower_id, value: current_user.id %>
-            <%=f.submit 'フォロー',class:'btn btn-primary'%>
-            <%end%>
-        <%else%>
-        <div class='like_button_destroy'>
-            <%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary'%>
-        </div>
-        <%end%>
-        <%else%>
-        <p></p>
-        <%end%>
-</div>                        
-<p>フォローユーザー</p> 
-<%@follow_current_user.each do |f|%>
-<p><%=link_to f.follow_user_email , user_path(f.user_id)%></p>
-<%end%>
+</div>
+
+
+
+    
+
+        
+</div>
 

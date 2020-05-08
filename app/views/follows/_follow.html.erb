@@ -1,0 +1,15 @@
+        <% if current_user.id != @user.id%>
+        <%if !!@follow_user.nil?%>
+        <div class='follow_button_create'>
+        <%=link_to 'フォロー' , follows_path(follow: {user_id: @user.id, follower_id: current_user.id}) , method: :post,action:'create', class:'btn btn-primary',
+            authenticity_token: form_authenticity_token,data: { disable_with: '相談する' },remote: true%>
+            
+        </div>
+        <%else%>
+        <div class='follow_button_destroy'>
+            <%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary',remote: true%>
+        </div>
+        <%end%>
+        <%else%>
+        <p></p>
+        <%end%>

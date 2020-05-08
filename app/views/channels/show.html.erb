@@ -3,23 +3,32 @@
 <br>
 
 
-
-<div class=' chat'>
-<div class="chat1" >
+<div class='chat'>
+    
 
 <%@chats.each do |m|%>
-
 <br>
 <div>
-<h6></h6>
-<p><%=m.content%></p>
+<%if current_user.id == m.user_id%>
+<div class="chat_p" >
+<p class='chat_content'><%=m.content%></p><br><br>
+</div>
+<%else%>
+<div class="chat_p2" >
+<p class='chat_content2'><%=m.content%></p>
+</div>
 <%end%>
+
+<%end%>
+</div>
+
+<div class="chat_p" >
+<div id="new_message"%></div>
 </div>
 
 
 
 
-<div id="new_message"%></div>
 <br>
 <%=form_with model: @chat do |f|%>
 <%if current_user.id == @channel.task_id%>
@@ -35,12 +44,10 @@
 <div class="input-group-append">
 <%=link_to 'ルーム消去' , "/channels/#{@channel.id}", method: :delete, class:'btn btn-danger',data: { confirm: 'トークルームを消去しますか？' },remote: true%>
 <%=f.submit '投稿',class:'btn btn-outline-secondary show_btn',id:"button-addon2"%>
-  </div>
+</div>
 </div>
 <%end%>
 
 
 
 </div>
-</div>
-
