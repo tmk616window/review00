@@ -22,7 +22,7 @@
 <%end%>
 </div>
 
-<div class="chat_p" >
+<div class="chat_p chat" >
 <div id="new_message"%></div>
 </div>
 
@@ -40,7 +40,7 @@
 <%= f.hidden_field :task_id, value: @channel.task_id%>
 <%= f.hidden_field :user_id, value: current_user.id%>
 <div class="input-group mb-6 chat_form ">
-<%=f.text_field :content,class:'form-control',id:'chat_message1'%>
+<%=f.text_field :content,class:'form-control',class:'chat_message1'%>
 <div class="input-group-append">
 <%=link_to 'ルーム消去' , "/channels/#{@channel.id}", method: :delete, class:'btn btn-danger',data: { confirm: 'トークルームを消去しますか？' },remote: true%>
 <%=f.submit '投稿',class:'btn btn-outline-secondary show_btn',id:"button-addon2"%>

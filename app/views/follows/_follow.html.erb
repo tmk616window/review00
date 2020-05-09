@@ -2,14 +2,16 @@
         <%if !!@follow_user.nil?%>
             
         <div id='follow_button_create_<%=@user.id%>'>
-        <%=@follow_current_user.count%>    
-        <%=link_to 'フォロー' , follows_path(follow: {user_id: @user.id, follower_id: current_user.id}) , method: :post,action:'create', class:'btn btn-primary',data: { disable_with: '相談する' },remote: true%>
+        フォロー(<%=@follow_current_user.count%>)
+        フォロワー(<%=@follow_follower_user.count%>)
+        <br><%=link_to 'フォロー' , follows_path(follow: {user_id: @user.id, follower_id: current_user.id}) , method: :post,action:'create', class:'btn btn-primary',data: { disable_with: '相談する' },remote: true%>
         </div>
             
         <%else%>
         <div id='follow_button_destroy_<%=@user.id%>'>
-        <%=@follow_current_user.count%>    
-            <%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary',data: { disable_with: '送信中' },remote: true%>
+        フォロー(<%=@follow_current_user.count%>)
+        フォロワー(<%=@follow_follower_user.count%>)
+            <br><%=link_to 'フォロー解除' , "/follows/#{@follow_user.id}", method: :delete, class:'btn btn-primary',data: { disable_with: '送信中' },remote: true%>
         </div>
         
         

@@ -330,13 +330,16 @@ header{
 }
 
 .users_profile{
+    margin-left:100px;
 
 }
 
 .users_follow{
-    margin-right:40%;
     float:right;
 }
 
-.users_follow p{
+.users_follower{
+    margin-right:100px;
+    margin-left:70px;
+    float:right;
 }

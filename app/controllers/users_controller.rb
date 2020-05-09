@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @follows = Follow.where(user_id: @user.id)
     @follow_user = @follows.find_by(follower_id: current_user.id)
     @follow_current_user = Follow.where(follower_id: @user.id)
+    @follow_follower_user = Follow.where(user_id: params[:id])
   end
   
   def create
