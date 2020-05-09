@@ -1,11 +1,11 @@
 class LikesController < ApplicationController
     def create
-    @like = Like.new(like_params)
-    @like.save
-    @task = Task.find_by(id: @like.task_id)
-    @likes = Like.where(task_id: @like.task_id)
-    @new_likes = Like.where(task_id: @task.id)
-    @like_user = @new_likes.find_by(user_id: current_user.id)
+        @like = Like.new(like_params)
+        @like.save
+        @task = Task.find_by(id: @like.task_id)
+        @likes = Like.where(task_id: @like.task_id)
+        @new_likes = Like.where(task_id: @task.id)
+        @like_user = @new_likes.find_by(user_id: current_user.id)
     end
     
     def destroy
