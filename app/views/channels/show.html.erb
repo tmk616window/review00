@@ -1,30 +1,23 @@
-<%@chats.each do |c|%>
-<%end%>
-<br>
-
-
-<div class='chat'>
-    
 
 <%@chats.each do |m|%>
-<br>
-<div>
 <%if current_user.id == m.user_id%>
-<div class="chat_p" >
-<p class='chat_content'><%=m.content%></p><br><br>
+<div class="chat_p chat2" >
+<p class='chat_content'><%=m.content%></p><br><br><br>
 </div>
 <%else%>
-<div class="chat_p2" >
-<p class='chat_content2'><%=m.content%></p>
+<div class="chat_p2 chat">
+<p class='chat_content2'><%=m.content%></p><br><br>
 </div>
 <%end%>
-
 <%end%>
-</div>
 
-<div class="chat_p chat" >
-<div id="new_message"%></div>
-</div>
+
+<%if current_user.id == @chat.user_id %>
+<div id="new_message" class="chat_p2"></div>
+<%elsif current_user != @chat.user_id%>
+<div id="new_message" class="chat_p"></div>
+<%end%>
+
 
 
 
@@ -39,15 +32,17 @@
 <%= f.hidden_field :channel_id, value: @channel.id%>
 <%= f.hidden_field :task_id, value: @channel.task_id%>
 <%= f.hidden_field :user_id, value: current_user.id%>
+
+
+
+<div class="input-group-append ">
+</div>
+
 <div class="input-group mb-6 chat_form ">
-<%=f.text_field :content,class:'form-control',class:'chat_message1'%>
-<div class="input-group-append">
-<%=link_to 'ルーム消去' , "/channels/#{@channel.id}", method: :delete, class:'btn btn-danger',data: { confirm: 'トークルームを消去しますか？' },remote: true%>
-<%=f.submit '投稿',class:'btn btn-outline-secondary show_btn',id:"button-addon2"%>
 </div>
-</div>
+    
+<%=f.text_field :content,class:'chatqq form-control',id:'chat_message1'%>
+<%=f.submit '投稿',class:'btn btn-outline-secondary show_btn chatqqq',id:"button-addon2"%>
+
+
 <%end%>
-
-
-
-</div>
