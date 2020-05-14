@@ -11,6 +11,7 @@ class ChannelsController < ApplicationController
         @chats = @chatss.where(user_id: @channel.task_id).or(@chatss.where(user_id: @channel.user_id))  
         @chat = Chat.new
         @chat_user = @chatss.find_by(user_id: params[:user_id])
+        gon.current_user_email = current_user.email
     end
     
     def create

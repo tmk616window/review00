@@ -56,7 +56,10 @@ header{
 }
 
 .tasks_index_seach{
+    margin-top:50px;
+    border:solid 1px black;    
 }
+
 
 .task_index{
     margin-bottom:70px;
@@ -168,43 +171,19 @@ header{
     margin-top:20px;
 }
 
-
-
-
-.chat_p p{
-    
-    display:inline-block;
-    padding: 10px 10px 10px 10px;
-    margin-right:25%;
-    border:solid 1px rgba(255,0,0,0.25);
-    border-radius: 30px;
-    background-color:rgba(255,0,0,0.25);
-    margin-left: 20px;
-    margin-right:0;
-    float:right;
-    margin-bottom:0;
-}
-
 .chat_p2 p{
     
     display:inline-block;
     padding: 10px 10px 10px 10px;
     margin-left:25%;
-    border:solid 1px rgba(0,0,255,0.25);
+    border:solid 1px rgba(204,204,204,0.6);
     border-radius: 30px;
-    background-color:rgba(0,0,255,0.25);
+    background-color:rgba(204,204,204,0.6);
     margin-left: 20px;
     margin-right: 5px;
 }
 
 
-.chat_p4 p{
-    display:inline-block;
-    padding: 10px 10px 10px 10px;
-    border:solid 1px rgba(255,0,0,0.25);
-    border-radius: 30px;
-    background-color:rgba(255,0,0,0.25);
-}
 
 .show_btn{
     background-color:white;
@@ -274,9 +253,8 @@ header{
     margin:0;
 }
 
-.chat_content{
-    background-color:red;
-    float:right;
+.chat_content p{
+    text-align:left;
 }
 
 
@@ -346,22 +324,31 @@ header{
  right:25%;
 }
 
+
 #new_message p{
-    margin-right:25%;
+    margin-right:27%;
+    
+}
+
+#new_message h6{
+    margin-top:14px;
+    float:left;
+    margin-left:27%;
+    font-weight:normal;
+    
 }
 
 
 .chat2 {
-    max-width:75%;
+    margin-left:27%;
+    margin-right:25%;
 }
 
 
 
-.chat2 p{
-    text-align:right;
+.chat2 h6{
 }
 
-.chat{
-    max-width:25%;
-    margin-left:25%;
+.channel{
+    margin-top:30px;
 }

@@ -1,19 +1,22 @@
-<div class='container tasks_index_seach'>
-
-<%= search_form_for @q do |f| %>
-    開発言語
-    <%=f.text_field :task_pl_cont%>
-    採用状況
-    <%= f.select :recruit_cont, [['', ''],['新卒', '新卒'], ['中途', '中途'], ['インターン', 'インターン']] %>
-    企業形態
-    <%= f.select :company_info_cont, [['', ''],['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
-    <%= f.submit '検索'%>
+<div class='container '>
+<div class='row justify-content-center'>
     
+<div class='col-2 tasks_index_seach'>
+<%= search_form_for @q do |f|%>
+<h2>検索</h2>
+    <p>採用状況 <%= f.select :recruit_cont, [['', ''],['新卒', '新卒'], ['中途', '中途'], ['インターン', 'インターン']] %></p>
+    <p>企業形態 <br><%= f.select :company_info_cont, [['', ''],['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %></p>
+       <p> 開発言語<%=f.text_field :task_pl_cont,class:'form-control'%></p>
+
+    <br><%= f.submit '検索',class:'btn btn-primary'%><br><br>
 <% end %>
 </div>
 
+    
+    
 
-<div class="task_index">
+
+<div class="task_index col-7">
     
     
         <%@tasks.each do |t|%>
@@ -69,6 +72,8 @@
     
 </div>
 
+</div>
+</div>
 
 
 

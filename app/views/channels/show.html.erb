@@ -1,26 +1,13 @@
+<div class='channel'>
+    
 
 <%@chats.each do |m|%>
-<%if current_user.id == m.user_id%>
-<div class="chat_p chat2" >
-<p class='chat_content'><%=m.content%></p><br><br><br>
-</div>
-<%else%>
-<div class="chat_p2 chat">
-<p class='chat_content2'><%=m.content%></p><br><br>
+<div class="chat_p2 chat2" >
+<%=User.find_by(id: m.user_id).email%><p class='chat_content'><%=m.content%></p><br>
 </div>
 <%end%>
-<%end%>
 
-
-<%if current_user.id == @chat.user_id %>
 <div id="new_message" class="chat_p2"></div>
-<%elsif current_user != @chat.user_id%>
-<div id="new_message" class="chat_p"></div>
-<%end%>
-
-
-
-
 
 <br>
 <%=form_with model: @chat do |f|%>
@@ -29,20 +16,13 @@
 <%elsif current_user.id == @channel.user_id%>
 <%= f.hidden_field :chat_post_id, value: @channel.task_id%>
 <%end%>
+<%= f.hidden_field :chat_email, value: current_user.email%>
 <%= f.hidden_field :channel_id, value: @channel.id%>
 <%= f.hidden_field :task_id, value: @channel.task_id%>
 <%= f.hidden_field :user_id, value: current_user.id%>
-
-
-
-<div class="input-group-append ">
-</div>
-
-<div class="input-group mb-6 chat_form ">
-</div>
-    
 <%=f.text_field :content,class:'chatqq form-control',id:'chat_message1'%>
 <%=f.submit '投稿',class:'btn btn-outline-secondary show_btn chatqqq',id:"button-addon2"%>
-
-
 <%end%>
+
+
+</div>

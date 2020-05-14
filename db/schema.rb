@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_075155) do
+ActiveRecord::Schema.define(version: 2020_05_12_121027) do
 
   create_table "channels", force: :cascade do |t|
     t.integer "user_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_075155) do
     t.integer "task_id"
     t.integer "channel_id"
     t.integer "chat_post_id"
+    t.string "chat_email"
     t.index ["channel_id"], name: "index_chats_on_channel_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
