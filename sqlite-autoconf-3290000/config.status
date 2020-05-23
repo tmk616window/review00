@@ -431,7 +431,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/ec2-user/environment/review616/sqlite-autoconf-3290000'
+ac_pwd='/home/ec2-user/environment/review00/sqlite-autoconf-3290000'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -867,12 +867,12 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/install-sh"
-S["MAKEINFO"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/missing automake-1.15"
-S["AUTOCONF"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/missing autoconf"
-S["ACLOCAL"]="${SHELL} /home/ec2-user/environment/review616/sqlite-autoconf-3290000/missing aclocal-1.15"
+S["install_sh"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/install-sh"
+S["MAKEINFO"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/missing automake-1.15"
+S["AUTOCONF"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/missing autoconf"
+S["ACLOCAL"]="${SHELL} /home/ec2-user/environment/review00/sqlite-autoconf-3290000/missing aclocal-1.15"
 S["VERSION"]="3.29.0"
 S["PACKAGE"]="sqlite"
 S["CYGPATH_W"]="echo"

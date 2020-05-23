@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_121027) do
+ActiveRecord::Schema.define(version: 2020_05_21_154739) do
 
   create_table "channels", force: :cascade do |t|
     t.integer "user_id"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 2020_05_12_121027) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "message_id"
+    t.integer "user_id"
+    t.string "content"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -124,5 +127,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_121027) do
   add_foreign_key "chats", "users"
   add_foreign_key "likes", "tasks"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "users"
   add_foreign_key "tasks", "users"
 end

@@ -2,19 +2,19 @@
 <div class='container messages_new_form'>
 <h2>勉強会や交流会を主催しよう！！</h2>
 <%=form_with model: @message do |f|%>
-<%= f.hidden_field :message_id, value: current_user.id %>
+<%= f.hidden_field :user_id, value: current_user.id %>
 <p>トップ画像</p>
 <%= f.file_field :image %>
 <p>イベント名</p>
 <%=f.text_field :name,class:'form-control'%>
 <p>内容</p>
-<%=f.text_field :message_coment,class:'form-control'%>
+<%=f.text_field :content,class:'form-control'%>
 <p>日時</p>
 <%=f.text_field :date,class:'form-control'%>
 <p>場所</p>
 <%=f.text_field :message_place,class:'form-control'%>
 <p>人数</p>
-<%=f.text_field :people%>
+<%=f.number_field :people%>
 
 <p>コメント</p>
 <%=f.text_area :message_coment,class:'form-control'%>
