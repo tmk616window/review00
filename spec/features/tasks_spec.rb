@@ -30,7 +30,5 @@ RSpec.feature "Tasks", type: :feature do
             click_button "投稿"
             
         }.to change(@user.tasks, :count).by(1)
-        
-
     end
 end

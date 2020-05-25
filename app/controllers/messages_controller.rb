@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     if @message.update!(message_params)
-      redirect_to messages_url
+      redirect_to message_url(@message)
     else
       render 'edit'
     end

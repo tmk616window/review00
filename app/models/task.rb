@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
     has_many :likes,foreign_key: 'task_id', dependent: :destroy
-    belongs_to :user,foreign_key: 'user_id'
+    belongs_to :user,foreign_key: 'user_id', optional: true
 
     validates :design_point, presence: true
     validates :function_point, presence: true 
@@ -14,6 +14,5 @@ class Task < ApplicationRecord
     validates :github_url, presence: true
     validates :company_info, presence: true
     validates :task_coment, presence: true
-    validates :user_id, presence: true
     validates :study_period, presence: true
 end

@@ -13,7 +13,10 @@ FactoryBot.define do
     company_info {"自社開発"}
     task_coment {"よろしくお願いします"} 
     study_period {6}
-    user_id {2}
-
+    user
+    
+    trait :invalid do
+      task_pl {"abc"}
+    end
   end
 end

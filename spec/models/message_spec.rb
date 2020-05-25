@@ -3,16 +3,8 @@ require 'rails_helper'
 RSpec.describe Message, type: :model do
   it "外部キーが有効である" do
       @user = FactoryBot.create(:user)
-      message = @user.messages.new(
-      name: "よろしくお願いします",
-      content: "勉強会",
-      date: "2020/7/30",
-      message_coment: "よろしくお願いします",
-      message_place: "東京駅",
-      people:5,
-      user_id: 2
-      )
-    expect(message).to be_valid
+      message = FactoryBot.create(:message, user: @user)
+      expect(message).to be_valid
   end
   
 

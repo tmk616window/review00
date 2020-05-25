@@ -19,13 +19,11 @@ class TasksController < ApplicationController
   
   def destroy
     @task = Task.find(params[:id])
-    if  current_user.id != @task.user_id
-      redirect_to root_url
+    if @task.destroy
+      redirect_to '/tasks'
+    else
+      render task_path(@task)
     end
-    
-    @task.destroy
-    
-    redirect_to '/tasks'
   end
   
   def edit
@@ -34,17 +32,17 @@ class TasksController < ApplicationController
     if  current_user.id != @task.user_id
       redirect_to root_url
     end
-    
+
   end
   
   def update
-    @task = Task.find(params[:id])
+      @task = Task.find(params[:id])
     if @task.update!(task_params)
       redirect_to task_url(@task)
     else
-      render 'edit'
+      render "show"
     end
-    
+
   end
   
   def create
@@ -58,11 +56,6 @@ class TasksController < ApplicationController
     
   end
   private
-  
-  def task1
-    @task = Task.find(params[:id])
-    @task.id = @task.task_id
-  end
   
   def task_params
     params.require(:task).permit(:tasks_id,:user_id,:task_id,:task_user_email,:design,:design_point,:function,:function_point,:plan,:plam_point,:unique,:unique_point,:user_perspective,:user_perspective_point,:recruit,:field,:task_old,:task_pl,:task_tool,:github_url,:work_explain,:study_period,:task_coment,:company_info)

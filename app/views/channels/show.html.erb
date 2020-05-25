@@ -16,7 +16,6 @@
 <%elsif current_user.id == @channel.user_id%>
 <%= f.hidden_field :chat_post_id, value: @channel.task_id%>
 <%end%>
-<%= f.hidden_field :chat_email, value: current_user.email%>
 <%= f.hidden_field :channel_id, value: @channel.id%>
 <%= f.hidden_field :task_id, value: @channel.task_id%>
 <%= f.hidden_field :user_id, value: current_user.id%>

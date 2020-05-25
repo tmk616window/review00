@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
   mount_uploader :image, ImageUploader
-  belongs_to :user,foreign_key: 'user_id'
+  belongs_to :user,foreign_key: 'user_id', optional: true
 
     validates :name, presence: true
     validates :date, presence: true

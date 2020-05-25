@@ -3,25 +3,10 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   it "外部キーが有効である" do
     @user = FactoryBot.create(:user)
-    task = @user.tasks.new(
-      design_point: 1,
-      function_point: 2,
-      plam_point: 3,
-      unique_point: 3,
-      user_perspective_point: 2,
-      recruit: "新卒",
-      field: "バックエンドエンジニア",
-      task_pl: "Ruby",
-      task_tool: "github",
-      github_url: "tmk616/git.com",
-      company_info: "自社開発",
-      task_coment: "よろしくお願いします",
-      study_period: 6,
-      user_id: 2
-      )
+    task = FactoryBot.create(:task ,user: @user)
     expect(task).to be_valid
   end
-  it "デザインポイントがない場合、無効である" do
+  it "タスクが有効である" do
     @task = FactoryBot.build(:task, design_point: nil)
     @task.valid?
     expect(@task.errors[:design_point]).to include("can't be blank")

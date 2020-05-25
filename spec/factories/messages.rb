@@ -6,6 +6,6 @@ FactoryBot.define do
     message_coment {"よろしくお願いします"}
     message_place {"東京駅"}
     people {5}
-    user_id {2}
+    user
   end
 end
