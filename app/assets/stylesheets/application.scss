@@ -55,10 +55,14 @@ header{
     text-decoration:none;
 }
 
+
 .tasks_index_seach{
-    margin-top:50px;
+    padding-top:30px;
+    margin-top:67px;
+    margin-right: 100px;
     border:solid 1px black;
     display: inline-block;
+    height:400px;
 }
 
 
@@ -352,4 +356,8 @@ header{
 
 .channel{
     margin-top:30px;
+}
+
+.pagination {
+  justify-content: center;
 }

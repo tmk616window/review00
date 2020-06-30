@@ -22,10 +22,10 @@
     var myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
-            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点","インフラ"],
             datasets: [{
 			    label: "ポートフォリオ分析",
-                data: [<%=@task.design_point%>, <%=@task.function_point%>, <%=@task.plam_point%>, <%=@task.unique_point%>, <%=@task.user_perspective_point%>],
+                data: [<%=@task.design_point%>, <%=@task.function_point%>, <%=@task.plam_point%>, <%=@task.unique_point%>, <%=@task.user_perspective_point%>, <%=@task.infra_point%>],
                 backgroundColor: 'rgba(255,0,0,0.5)',
                 borderColor: 'RGBA(225,95,150, 1)',
                 borderWidth: 1,

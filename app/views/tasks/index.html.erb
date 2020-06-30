@@ -33,10 +33,10 @@
     var myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
-            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点"],
+            labels: ["デザイン", "機能", "企画力", "ユニーク性", "ユーザー視点","インフラ"],
             datasets: [{
 			    label: "ポートフォリオ分析",
-                data: [<%=t.design_point%>, <%=t.function_point%>, <%=t.plam_point%>, <%=t.unique_point%>, <%=t.user_perspective_point%>],
+                data: [<%=t.design_point%>, <%=t.function_point%>, <%=t.plam_point%>, <%=t.unique_point%>, <%=t.user_perspective_point%>,<%=t.infra_point%>],
                 backgroundColor: 'rgba(255,0,0,0.5)',
                 borderColor: 'RGBA(225,95,150, 1)',
                 borderWidth: 1,
@@ -59,7 +59,6 @@
         <div class="tasks_index_form">
         <p>入社方式　　　<%=t.recruit%></p>
         <p>企業情報　　　<%=t.company_info%></p>
-        <p>年齢　　　　　<%=t.task_old%>歳</p>
         <p>開発言語　　　<%=t.task_pl%></p>
         </div>
     </div>
@@ -68,13 +67,13 @@
 </div>
 
 <%end%>
-
+<br>
+  <%= paginate @tasks %>
     
 </div>
 
 </div>
 </div>
-
 
 
         
