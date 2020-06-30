@@ -23,7 +23,11 @@
 　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <div class="container d-flex justify-content-center">
     <div class='tasks_index '>
+        <%if current_user.nil?%>
+        <a href="/users/sign_in"></a>
+        <%else%>
         <a href="/tasks/<%=t.id%>"></a>
+        <%end%>
     <div class="tasks_index_image">
         
         <canvas id="chart<%=t.id%>"></canvas>
