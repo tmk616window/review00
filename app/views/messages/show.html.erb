@@ -11,8 +11,13 @@
 
         </div>
         </div>
+        <%if current_user.id != @message.message_id%>
         <%=link_to '編集', edit_message_path(@message) , class:'btn btn-primary show_tasks_edit_button'%>
         <%= link_to '消去', message_path, method: :delete,class:'btn btn-danger' %>
+        <%else%>
+        <p></p>
+        <%end%>
+        
         </div>
         <div class='show_tasks_chart'>
               <% if @message.image? %>
