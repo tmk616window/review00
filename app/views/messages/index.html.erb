@@ -8,7 +8,7 @@
     <a href="/messages/<%=m.id%>"></a>
     <div class="messages_index_image">
         <% if m.image? %>
-            <p><%= image_tag m.image.url, width:'100%',height:'100%'%></p>
+            <%= image_tag m.image.url, width:'100%',height:'100%'%>
           <% else %>
             <p>画像が挿入されていません</p>
         <% end %>

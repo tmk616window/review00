@@ -4,7 +4,7 @@
         <div class='col-5 apply_form'>
 <h1>申し込み</h1>
 <%=form_with model: @post do |f|%>
-<%= f.hidden_field :post_id, value: @message.message_id %>
+<%= f.hidden_field :post_id, value: @message.user_id %>
 <%= f.hidden_field :post_email, value: current_user.email %>
 <p>名前</p>
 <%=f.text_field:post_name,class:'form-control'%>
