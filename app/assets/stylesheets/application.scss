@@ -104,9 +104,9 @@ header{
 
 .show_tasks{
     padding:20px 20px 20px 20px;
-    border: solid 1px black;
     margin-top: 60px;
     margin-bottom:60px;
+    box-shadow: 2px 2px 20px 2px gray ;
 }
 
 .show_tasks_edit_button{
@@ -136,6 +136,8 @@ header{
 .show_tasks_table{
     padding-right:40px;
     padding-left:40px;
+    margin-right: 60px;
+    margin-left: 60px;
 }
 
 .show_tasks_table table {
@@ -164,8 +166,10 @@ header{
 
 .show_tasks_coment{
     margin-top: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
     background-color:#FFFFCC;
-    padding:10px 10px 100px 10px;
+    padding: 10px 10px 100px 10px;
 }
 
 .tasks_new p{

@@ -1,7 +1,9 @@
 <div class='container tasks_new'>
+<h2>採用されたときのポートフォリオを投稿しよう！！</h2>
 
-<h2>ポートフォリオ分析(5点満点)</h2>
+<p>ポートフォリオ分析(5点満点)</p>
 <%=form_with model: @task do |f|%>
+<%= f.hidden_field :user_id, value: current_user.id%>
 <%= f.hidden_field :task_user_email, value: current_user.email %>
 
 
@@ -15,9 +17,11 @@
 <%= f.select :unique_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
 ユーザー視点
 <%= f.select :user_perspective_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
-<br><br>
-<h2>ポートフォリオ項目別説明</h2>
-<p>コメント</p>
+環境構築
+<%= f.select :infra_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]%>
+<br>
+
+<p>ポートフォリオ概要</p>
 <%=f.text_area :task_coment,class:'form-control'%>
 
 <p>採用方式</p>

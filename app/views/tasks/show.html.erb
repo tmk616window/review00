@@ -45,7 +45,6 @@
         </div>
         
         <div class='show_tasks_user'>
-            <h2>ユーザー情報</h2><%=link_to "#{User.find_by(id: @task.user_id).email}" , user_path(@task.user_id)%>
 <div class='show_tasks_table'>
     
 <table>
@@ -89,7 +88,6 @@
 <br>
 <%=link_to '相談する' , channels_path(channel: {user_id: current_user.id, task_id: @task.user_id}) , method: :post,action:'create', class:'btn btn-primary show_tasks_channel',
 authenticity_token: form_authenticity_token,data: { disable_with: '相談する' }%>
-<p>投稿者とslack形式でメッセージのやり取りができます。</p>
         <div id="show_tasks_like ">
         <%= render partial: 'likes/like', locals: { task: @task} %>
         </div>

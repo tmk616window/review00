@@ -17,7 +17,7 @@
 <%= f.select :unique_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
 ユーザー視点
 <%= f.select :user_perspective_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
-インフラ
+環境構築
 <%= f.select :infra_point, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]%>
 <br>
 
@@ -29,7 +29,7 @@
 <p>企業情報</p>
 <%= f.select :company_info, [['自社開発', '自社開発'], ['受託開発', '受託開発'], ['SES', 'SES']] %>
 <p>分野</p>
-<%=f.text_field :field,class:'form-control'%>
+<%=f.text_field :field,placeholder:"フロントエンジニア、バックエンドエンジニア,クラウドエンジニアなど",class:'form-control'%>
 <p>開発言語</p>
 <%=f.text_field :task_pl,class:'form-control'%>
 <p>開発ツール</p>
