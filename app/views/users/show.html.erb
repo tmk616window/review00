@@ -5,10 +5,15 @@
 <%=link_to '編集' , edit_user_path(@user) ,class:'btn btn-primary '%>
 <%else%>
 <%end%>
-</h1> 
+</h1>
 
-<%= link_to "イベントメッセージ(#{@posts.count})", posts_path %>
-<%= link_to "チャットメッセージ(#{@chats.count})", room_path(@user) %>
+<%if current_user.id == @user.id%>
+    <%= link_to "イベントメッセージ(#{@posts.count})", posts_path %>
+    <%= link_to "チャットメッセージ(#{@chats.count})", room_path(@user) %>
+<%else%>
+<%end%>
+
+
 
 <div class='container'>
 
