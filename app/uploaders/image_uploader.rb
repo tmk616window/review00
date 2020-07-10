@@ -13,7 +13,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   elsif Rails.env.test?
     storage :file
   else
-    storage :fog
+    storage :file
   end
   # 画像ごとに保存するディレクトリを変える
   def store_dir
