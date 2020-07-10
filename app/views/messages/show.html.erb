@@ -61,7 +61,7 @@
             <%=@message.message_coment%>
         </div>
         <div class='message_show_apply_button'>
-        <%if current_user.id != @message.message_id%>
+        <%if current_user.id != @message.user_id%>
             <%=link_to 'イベント申し込み' , post_path(@message) ,class:'btn btn-primary'%>
         <%else%>
         <p></p>
